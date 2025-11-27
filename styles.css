@@ -155,7 +155,7 @@ a.navbar-brand.brand-logo:focus {
   align-items: flex-end;
   margin-left: 0;
   gap: 0.5rem;
-  padding-top: 0;
+  padding-top: 0.5rem;
 }
 
 /* Reset nearby nav-item spacing for mobile */
