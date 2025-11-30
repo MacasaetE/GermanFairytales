@@ -116,6 +116,7 @@
   font-size: 0.75rem;
   border-radius: 4px;
   z-index: 1;
+  font-weight: lighter;
 }
 
 .card-img:hover .pic-cite {
@@ -125,7 +126,6 @@
 
 .card a {
   display: inline-block;
-  font-weight: 500;
   margin-block: 10px;
   text-decoration: underline;
 }

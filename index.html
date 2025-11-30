@@ -18,8 +18,14 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+      defer
+    ></script>
+
     <script src="navigation.js" defer></script>
     <script src="darkmode.js" defer></script>
+    <script src="home.js" defer></script>
   </head>
 
   <body>
@@ -27,7 +33,7 @@
     <my-header></my-header>
     <main class="home-main">
       <!--Hero Section-->
-      <section>
+      <section class="hero-section">
         <div class="hero-image">
           <div class="hero-text">
             <h1>Beauty in Fairytales</h1>
@@ -43,9 +49,25 @@
         </div>
       </section>
       <!--Info Section-->
-        <
-      <section>
-        <h2> </h2>
+      <section class="home-overview">
+        <article class="home-intro">
+          <div class="column-text">
+            <h2>Overview</h2>
+            <p>text go here</p>
+          </div>
+          <figure class="home-img">
+            <img
+              src="images/Cinderella_Kubel.jpg"
+              alt="Cinderella holding an empty bowl with a bird perched on her finger"
+            />
+            <figcaption>
+              Cinderella -
+              <a href="https://artvee.com/dl/cinderella-no-2/"
+                >Otto Kubel (1868-1951)</a
+              >
+            </figcaption>
+          </figure>
+        </article>
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
