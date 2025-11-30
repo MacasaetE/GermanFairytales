@@ -1,9 +1,11 @@
-:root[data-theme="dark"] .card-black {
+:root[data-theme="dark"] .card-black,
+:root[data-theme="dark"] .card-black a {
   color: #050315;
   background: #fff;
 }
 
 :root[data-theme="dark"] .history-card {
+  color: white;
   background: #000;
 }
 
@@ -64,7 +66,6 @@
 .history-cards {
   max-width: 1200px;
   margin: -2rem auto 4rem;
-  /* padding: 0 4vw; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   justify-content: center;
@@ -73,6 +74,7 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   font-size: 0.95rem;
@@ -83,17 +85,21 @@
 }
 
 .card-img {
+  position: relative;
   height: 280px;
   width: 100%;
   margin-bottom: 10px;
+  transform-origin: center top;
+  transition: transform 0.3s ease;
   flex-shrink: 0;
-  position: relative;
 }
 
 .card-img img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
   border-radius: 12px;
 }
 
@@ -102,45 +108,31 @@
   transform: scale(1.06);
 }
 
-.card-img:hover p {
-  display: block;
-}
-
 .pic-cite {
   display: none;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
   height: auto;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  z-index: 1;
 }
 
-.fable {
-  display: none;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  top: 8px;
-  left: 12px;
+.card-img:hover .pic-cite {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .card a {
-  display: block;
+  display: inline-block;
   font-weight: 500;
   margin-block: 10px;
   text-decoration: underline;
 }
 
-.card-body,
-.card-body-black {
-  padding: 1.25rem 1.5rem 1.75rem;
-  margin-top: auto;
-}
-
 .card-body {
-  color: var(--text);
+  padding: 1.65rem 1.5rem 1.75rem;
+  margin-top: auto;
 }
 
 .card-black {
@@ -148,8 +140,12 @@
   color: #fff;
 }
 
+.card .card-black .card-body {
+  color: #050315;
+}
+
 .card-black a {
-  color: #fc1549;
+  color: white;
 }
 
 @media (max-width: 768px) {
