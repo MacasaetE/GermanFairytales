@@ -12,13 +12,22 @@
     <link href="styles.css" rel="stylesheet" />
     <link href="history.css" rel="stylesheet" />
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+      defer
+    ></script>
 
     <script src="navigation.js" defer></script>
     <script src="darkmode.js" defer></script>
+    <script src="history.js" defer></script>
   </head>
 
   <body>
@@ -32,6 +41,8 @@
             ><span>o</span><span>r</span><span>y</span>
           </h1>
 
+          <div class="green-bg"></div>
+
           <div class="text">
             <h2>Grimm's to Gryffindor</h2>
             <p>
@@ -42,21 +53,65 @@
         </div>
       </section>
       <section class="history-cards">
-        <div class="card card-black">
+        <article class="card history-card">
           <div class="card-img">
             <img
-              src="images/Cinderella_Kubel.jpg"
-              alt="Cinderella holding an empty bowl, "
+              src="images/Frau_Holle.jpg"
+              alt="A blonde woman shaking pillow feathers out a window while an old woman watches."
             />
+            <p class="pic-cite">
+              <a
+                href="https://www.childstories.org/images/Frau_Holle.jpg"
+                style="color: white"
+                >Paul Hey (1867-1952)</a
+              >
+            </p>
+            <p class="fable">Frau Holle</p>
+          </div>
+          <div class="card-body">
+            Fairy tales have consistently illustrated that a person's value is
+            in their body. Be it their beauty or their labor.
+          </div>
+        </article>
+        <article class="card card-black">
+          <div class="card-img">
+            <img
+              src="images/SleepingBeautyBaby.jpg"
+              alt="Witch standing over baby, with onlookers surrounding them."
+            />
+            <p class="pic-cite">
+              <a
+                href="https://render.fineartamerica.com/images/rendered/square-product/small/images-medium-large-5/7-perrault-sleeping-beauty-granger.jpg"
+                style="color: white"
+                >H.J. Ford (1860-1941)</a
+              >
+            </p>
           </div>
 
-          <div class="card-body">
-            Beauty has remained a consistent theme in fairy tales throughout
-            history.
+          <div class="card-body-black">
+            As fairy tales have illustrated, a person's value lies in their
+            body.
           </div>
-        </div>
+        </article>
+        <article class="card history-card">
+          <div class="card-img">
+            <img
+              src="images/CinderellaBirds.jpg"
+              alt="Cinderella sitting and feeding birds."
+            />
+            <p class="pic-cite">
+              <a
+                href="https://www.childstories.org/images/Aschenputtel_03-1.jpg"
+                style="color: white"
+                >Source</a
+              >
+            </p>
+          </div>
+          <div class="card-body">
+            The beautiful fair maiden awaits her handsome prince.
+          </div>
+        </article>
       </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
