@@ -60,7 +60,7 @@ class MyHeader extends HTMLElement {
               <a class="nav-link" href="history.html">History</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gendered.html">Gendered Descriptions</a>
+              <a class="nav-link" href="desc.html">Gendered Descriptions</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="effects.html">Effects</a>

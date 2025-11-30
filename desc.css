@@ -1,0 +1,81 @@
+.green-bg {
+  position: absolute;
+  z-index: -1;
+  background: var(--secondary);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.desc-hero {
+  position: relative;
+  padding: 4rem 4vw 6rem;
+}
+
+.desc-hero-left {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.desc-title {
+  margin: 0;
+  font-size: clamp(3.5rem, 11vw, 6rem);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  font-weight: bolder;
+  white-space: nowrap;
+}
+
+.desc-title span {
+  display: inline-block;
+}
+
+.text {
+  position: static;
+  width: 260px;
+  margin-top: 4rem;
+  margin-right: 1rem;
+}
+
+.text h2 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.text p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .history-cards {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    margin: -3rem auto 3rem;
+    padding: 0 1.25rem;
+  }
+
+  .history-hero-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .history-title {
+    font-size: clamp(2.4rem, 11vw, 3rem);
+    letter-spacing: 0.04em;
+  }
+
+  .text {
+    position: static;
+    width: 100%;
+    max-width: 24rem;
+    margin-top: 0.5rem;
+  }
+}
