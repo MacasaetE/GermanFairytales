@@ -103,8 +103,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
 /* Nav Bar / Header*/
 
 .custom-nav {
@@ -186,6 +184,19 @@ a.navbar-brand.brand-logo:focus {
 .custom-nav .navbar-collapse {
   flex-grow: 0;
   margin-left: auto;
+}
+
+.pic-cite {
+  display: none;
+  position: absolute;
+  height: auto;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  z-index: 1;
+  font-weight: light;
+  margin-top: 5px;
+  margin-bottom: 5p;
 }
 
 /* Desktop navbar layout */

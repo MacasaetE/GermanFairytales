@@ -99,7 +99,7 @@
 .home-img img {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 50%;
 }
 
 .home-img figcaption {
