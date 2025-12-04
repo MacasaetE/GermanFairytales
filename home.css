@@ -75,6 +75,7 @@
   grid-column: 2;
   margin: 0;
   align-self: flex-start;
+  max-width: 330px;
 }
 
 .column-text h2 {
@@ -89,17 +90,11 @@
   margin: 0 0 0.75rem 0;
 }
 
-/* .home-intro h2,
-.home-intro p {
-  grid-column: 1;
-  padding: 0 0 1rem 0;
-  font-size: clamp(1.8rem, 3vw + 1rem, 2.5rem);
-} */
-
 .home-img img {
   display: block;
+  width: 100%;
   max-width: 100%;
-  height: 50%;
+  height: auto;
 }
 
 .home-img figcaption {
