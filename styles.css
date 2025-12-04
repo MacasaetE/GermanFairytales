@@ -4,6 +4,7 @@
   --primary: #404e3b;
   --secondary: #bac8b1;
   --accent: #7b9669;
+  --gradient: #7f9173;
 }
 
 :root[data-theme="dark"] {

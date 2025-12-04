@@ -153,6 +153,50 @@
   color: white;
 }
 
+/* === DATA SECTION (chart) === */
+
+.desc-data-section {
+  padding-block: 4rem;
+  padding-inline: clamp(1.5rem, 6vw, 5rem);
+}
+
+.data-img {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--background);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.data-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.data-caption {
+  padding: 1rem 1.5rem 1.25rem;
+  font-size: 0.9rem;
+  text-align: right;
+  color: var(--text);
+}
+
+.data-caption a {
+  text-decoration: underline;
+}
+
+/* stack nicely on mobile */
+@media (max-width: 768px) {
+  .desc-data-section {
+    padding-inline: 1.25rem;
+  }
+
+  .data-caption {
+    text-align: left;
+  }
+}
+
 @media (max-width: 768px) {
   .desc-cards {
     grid-template-columns: 1fr;

@@ -175,6 +175,161 @@
   }
 }
 
+.wrapper {
+  min-height: 100vh;
+  font-weight: 300;
+  color: #fff;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    var(--primary) 0%,
+    var(--accent) 50%,
+    var(--secondary) 100%
+  );
+}
+
+.wrapper > section {
+  height: 100vh;
+  font-size: 40px;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+/* Color each section */
+.wrapper > section:nth-of-type(1) {
+  background: var(--secondary);
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(images/CinderellaTransform.gif);
+  min-height: 60vh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav__counter {
+  font-size: 24px;
+  transition: all 0.15s ease-out;
+}
+
+.nav__title {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0 0 0.25em;
+  width: 300px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: height 0.3s ease-out, opacity 0.2s ease-out;
+}
+
+.nav__body {
+  font-weight: 100;
+  font-size: 18px;
+  width: 300px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: height 0.3s ease-out, opacity 0.2s ease-out;
+}
+
+.timeline-nav li {
+  position: relative;
+  transition: all 0.3s ease-out;
+  margin-bottom: 1em;
+}
+
+.timeline-nav li:after {
+  content: "";
+  display: block;
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+  height: 250px;
+  width: 20px;
+  position: absolute;
+  left: -30px;
+  top: 15px;
+}
+
+.timeline-nav li a {
+  display: block;
+  padding: 0;
+  color: #fff;
+  transition: all 0.15s ease-out;
+  text-decoration: none;
+}
+
+.timeline-nav li a:hover {
+  background-color: transparent;
+  padding-left: 1em;
+}
+
+.timeline-nav li a:focus {
+  background-color: transparent;
+}
+
+.timeline-nav li.active {
+  pointer-events: none;
+  padding-left: 1em;
+}
+
+.timeline-nav li.active:after {
+  width: 35px;
+  height: 400px;
+  top: 35px;
+}
+
+.timeline-nav li.active .nav__counter {
+  font-size: 48px;
+}
+
+.timeline-nav li.active .nav__title {
+  height: 40px;
+  opacity: 1;
+  overflow: visible;
+}
+
+.timeline-nav li.active .nav__body {
+  height: 100px;
+  opacity: 1;
+  overflow: visible;
+}
+
+.nav__wrapper {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+}
+
+.nav__wrapper.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.timeline-nav {
+  margin: 0 0 100px 30px;
+  pointer-events: auto;
+  list-style: none;
+  padding: 0;
+}
+
 @media (min-width: 768px) and (max-width: 1200px) {
   .history-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
