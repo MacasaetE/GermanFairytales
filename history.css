@@ -222,9 +222,8 @@
   font-size: 32px;
   font-weight: 300;
   margin: 0 0 0.25em;
-  width: 300px;
   height: 0;
-  overflow: hidden;
+  overflow: contain;
   opacity: 0;
   transition: height 0.3s ease-out, opacity 0.2s ease-out;
 }
@@ -232,20 +231,24 @@
 .nav__body {
   font-weight: 100;
   font-size: 18px;
-  width: 300px;
   height: 0;
   overflow: hidden;
   opacity: 0;
   transition: height 0.3s ease-out, opacity 0.2s ease-out;
 }
 
-.timeline-nav li {
+.nav__body,
+.nav__title {
+  width: clamp(280px, 40vw, 480px);
+}
+
+.timeline-nav > li {
   position: relative;
   transition: all 0.3s ease-out;
   margin-bottom: 1em;
 }
 
-.timeline-nav li:after {
+.timeline-nav > li:after {
   content: "";
   display: block;
   border-left: 2px solid white;
@@ -257,7 +260,7 @@
   top: 15px;
 }
 
-.timeline-nav li a {
+.timeline-nav > li a {
   display: block;
   padding: 0;
   color: #fff;
@@ -265,37 +268,37 @@
   text-decoration: none;
 }
 
-.timeline-nav li a:hover {
+.timeline-nav > li a:hover {
   background-color: transparent;
   padding-left: 1em;
 }
 
-.timeline-nav li a:focus {
+.timeline-nav > li a:focus {
   background-color: transparent;
 }
 
-.timeline-nav li.active {
+.timeline-nav > li.active {
   pointer-events: none;
   padding-left: 1em;
 }
 
-.timeline-nav li.active:after {
+.timeline-nav > li.active:after {
   width: 35px;
   height: 400px;
   top: 35px;
 }
 
-.timeline-nav li.active .nav__counter {
+.timeline-nav > li.active .nav__counter {
   font-size: 48px;
 }
 
-.timeline-nav li.active .nav__title {
+.timeline-nav > li.active .nav__title {
   height: 40px;
   opacity: 1;
   overflow: visible;
 }
 
-.timeline-nav li.active .nav__body {
+.timeline-nav > li.active .nav__body {
   height: 100px;
   opacity: 1;
   overflow: visible;
@@ -324,7 +327,7 @@
 }
 
 .timeline-nav {
-  margin: 0 0 100px 30px;
+  margin: 0 0 100px 50px;
   pointer-events: auto;
   list-style: none;
   padding: 0;
@@ -333,5 +336,14 @@
 @media (min-width: 768px) and (max-width: 1200px) {
   .history-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 992px) {
+  .wrapper > section {
+    justify-content: flex-start; /* align content with left padding */
+    text-align: left;
+    padding-left: 380px; /* space for timeline column */
+    padding-right: 2rem;
+    box-sizing: border-box;
   }
 }
