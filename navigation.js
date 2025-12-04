@@ -66,9 +66,6 @@ class MyHeader extends HTMLElement {
               <a class="nav-link" href="ugliness.html">Punishment</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="effects.html">Effects</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="sources.html">Sources</a>
             </li>
           </ul>
