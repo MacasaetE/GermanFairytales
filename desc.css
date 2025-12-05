@@ -225,7 +225,10 @@
 .youtube-embed {
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
+}
+
+.youtube-embed--inline {
+  margin-bottom: 0;
 }
 
 .video-container {
