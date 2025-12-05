@@ -140,10 +140,6 @@
   color: #fff;
 }
 
-.card .card-black .card-body {
-  color: #050315;
-}
-
 .card-black a {
   color: white;
 }
@@ -180,6 +176,7 @@
   font-weight: 300;
   color: #fff;
   position: relative;
+  background: var(--secondary);
   background: linear-gradient(
     to bottom,
     var(--primary) 0%,
@@ -221,9 +218,9 @@
 .nav__title {
   font-size: 32px;
   font-weight: 300;
+  overflow: hidden;
   margin: 0 0 0.25em;
   height: 0;
-  overflow: contain;
   opacity: 0;
   transition: height 0.3s ease-out, opacity 0.2s ease-out;
   width: clamp(280px, 40vw, 480px);
@@ -234,7 +231,6 @@
   font-size: 18px;
   height: 0;
   width: 100%;
-  max-width: 60rem;
   overflow: hidden;
   opacity: 0;
   transition: height 0.3s ease-out, opacity 0.2s ease-out;
@@ -338,10 +334,37 @@
 }
 @media (min-width: 992px) {
   .wrapper > section {
-    justify-content: flex-start; /* align content with left padding */
+    justify-content: flex-start;
     text-align: left;
-    padding-left: 380px; /* space for timeline column */
+    padding-left: 380px;
     padding-right: 2rem;
     box-sizing: border-box;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav__wrapper {
+    padding: 16px;
+  }
+
+  .timeline-nav {
+    margin: 0 0 60px 40px;
+  }
+
+  .timeline-nav > li.active .nav__counter {
+    font-size: 32px;
+  }
+
+  .nav__title {
+    font-size: 24px;
+    width: clamp(240px, 60vw, 400px);
+  }
+
+  .nav__body {
+    font-size: 16px;
+  }
+
+  .timeline-nav > li.active .nav__body {
+    height: auto;
   }
 }
