@@ -72,6 +72,7 @@
   justify-content: center;
   gap: 2rem;
   grid-auto-rows: 1fr;
+  z-index: 5;
 }
 
 .card {
@@ -83,6 +84,10 @@
   /* overflow: hidden; */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
   height: 100%;
+}
+
+.card[data-target] {
+  cursor: pointer;
 }
 
 .card-img {
@@ -240,6 +245,7 @@
   position: relative;
   transition: all 0.3s ease-out;
   margin-bottom: 1em;
+  opacity: 0.5;
 }
 
 .timeline-nav > li:after {
@@ -276,6 +282,7 @@
 .timeline-nav > li.active {
   pointer-events: none;
   padding-left: 1em;
+  opacity: 1;
 }
 
 .timeline-nav > li.active:after {
@@ -300,6 +307,23 @@
   overflow: visible;
 }
 
+.nav__sub {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out, opacity 0.2s ease-out;
+  font-weight: lighter;
+}
+
+.timeline-nav > li.active .nav__sub {
+  height: 1.5em;
+  opacity: 1;
+  overflow: visible;
+}
+
 .nav__wrapper {
   position: fixed;
   top: 0;
@@ -312,9 +336,9 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
-  pointer-events: none;
-  z-index: 1000;
+  z-index: 1;
   opacity: 0;
+  pointer-events: none;
 }
 
 .nav__wrapper.is-visible {

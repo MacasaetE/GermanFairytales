@@ -40,7 +40,7 @@
   letter-spacing: 0.06em;
   color: var(--text);
   font-weight: bolder;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .desc-title span {
@@ -227,9 +227,7 @@
   .data-text {
     order: 2;
   }
-}
 
-@media (max-width: 768px) {
   .desc-cards {
     grid-template-columns: 1fr;
     max-width: 100%;
@@ -255,6 +253,7 @@
     margin-top: 0.5rem;
   }
 }
+
 .youtube-embed {
   display: flex;
   justify-content: center;

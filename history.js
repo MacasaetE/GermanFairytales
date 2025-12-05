@@ -38,25 +38,55 @@ gsap.from(".card:nth-child(2)", {
 });
 
 $(function () {
+  const $cards = $(".history-cards");
+  const cardsBottom = $cards.offset().top + $cards.outerHeight();
   const $timelineWrapper = $(".wrapper");
-  if (!$timelineWrapper.length) return;
-
-  const $sections = $timelineWrapper.find("> section");
-  const $navLinks = $(".timeline-nav a");
-  const $navItems = $(".timeline-nav li");
   const $navWrapper = $(".nav__wrapper");
+  const $sections = $timelineWrapper.find("> section");
+  const $navItems = $(".timeline-nav li");
+  const $timelineLinks = $('.timeline-nav a[href^="#"]');
   const activateOffset = 150;
 
-  // Smooth scroll for timeline links
-  $navLinks.on("click", function (e) {
+  if (!$timelineWrapper.length || !$navWrapper.length) return;
+
+  // Smooth scroll only for timeline links
+  $timelineLinks.on("click", function (e) {
     const targetId = $(this).attr("href");
+    if (!targetId || !targetId.startsWith("#")) return;
+
     const $target = $(targetId);
-    if ($target.length) {
-      e.preventDefault();
-      $("html, body").animate({ scrollTop: $target.offset().top }, 800);
-    }
+    if (!$target.length) return;
+
+    e.preventDefault();
+
+    $("html, body").animate(
+      {
+        scrollTop: $target.offset().top,
+      },
+      800
+    );
   });
 
+  // Click cards to jump to a specific timeline section
+  $(".card[data-target]").on("click", function (e) {
+    // Let normal link clicks behave as usual
+    if ($(e.target).closest("a").length) return;
+
+    const targetSelector = $(this).data("target");
+    if (!targetSelector) return;
+
+    const $target = $(targetSelector);
+    if (!$target.length) return;
+
+    $("html, body").animate(
+      {
+        scrollTop: $target.offset().top,
+      },
+      800
+    );
+  });
+
+  // Highlight correct nav item based on scroll position
   function updateActiveNav(scrollPos) {
     let currentId = null;
 
@@ -76,6 +106,7 @@ $(function () {
     $navItems.has('a[href="#' + currentId + '"]').addClass("active");
   }
 
+  // Show/hide nav only when timeline area is actually in view
   function onScroll() {
     const scrollPos = $(window).scrollTop();
     const winHeight = $(window).height();
@@ -83,12 +114,10 @@ $(function () {
     const wrapperTop = $timelineWrapper.offset().top;
     const wrapperBottom = wrapperTop + $timelineWrapper.outerHeight();
 
-    const triggerOffset = 150;
+    // Trigger point a bit below top of viewport
+    const triggerY = scrollPos + 80;
 
-    const focusPoint = scrollPos + triggerOffset;
-    // 0.5 = center of the viewport
-
-    const inTimeline = focusPoint > wrapperTop && focusPoint < wrapperBottom;
+    const inTimeline = triggerY >= wrapperTop && triggerY < wrapperBottom;
 
     $navWrapper.toggleClass("is-visible", inTimeline);
 
@@ -98,7 +127,25 @@ $(function () {
   }
 
   $(window).on("scroll", onScroll);
+  $(window).on("resize", onScroll);
   onScroll();
+
+  $(".card[data-target]").on("click", function (e) {
+    if ($(e.target).closest("a").length) return;
+
+    const targetSelector = $(this).data("target");
+    if (!targetSelector) return;
+
+    const $target = $(targetSelector);
+    if (!$target.length) return;
+
+    $("html, body").animate(
+      {
+        scrollTop: $target.offset().top,
+      },
+      800
+    );
+  });
 });
 
 const host = window.location.hostname;
