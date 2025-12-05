@@ -223,17 +223,17 @@
   height: 0;
   opacity: 0;
   transition: height 0.3s ease-out, opacity 0.2s ease-out;
-  width: clamp(280px, 40vw, 480px);
 }
 
 .nav__body {
   font-weight: 100;
   font-size: 18px;
   height: 0;
-  width: 100%;
+  /* width: 100%; */
   overflow: hidden;
   opacity: 0;
   transition: height 0.3s ease-out, opacity 0.2s ease-out;
+  margin: 0.5rem 0 0;
 }
 
 .timeline-nav > li {
@@ -260,6 +260,8 @@
   color: #fff;
   transition: all 0.15s ease-out;
   text-decoration: none;
+  /* width: clamp(280px, 40vw, 480px); */
+  width: min(100%, 640px);
 }
 
 .timeline-nav > li a:hover {
@@ -293,7 +295,7 @@
 }
 
 .timeline-nav > li.active .nav__body {
-  height: 100px;
+  height: auto;
   opacity: 1;
   overflow: visible;
 }
@@ -331,12 +333,15 @@
   .history-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .timeline-nav > li a {
+    width: min(100%, 720px);
+  }
 }
 @media (min-width: 992px) {
   .wrapper > section {
     justify-content: flex-start;
     text-align: left;
-    padding-left: 380px;
+    padding-left: 460px;
     padding-right: 2rem;
     box-sizing: border-box;
   }
@@ -355,9 +360,19 @@
     font-size: 32px;
   }
 
+  .timeline-nav > li a {
+    /* width: clamp(240px, 60vw, 400px); */
+    width: calc(100% - 40px);
+    max-width: 550px;
+  }
+
+  .section.section1 {
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
   .nav__title {
     font-size: 24px;
-    width: clamp(240px, 60vw, 400px);
   }
 
   .nav__body {

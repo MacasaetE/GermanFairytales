@@ -83,7 +83,9 @@ $(function () {
     const wrapperTop = $timelineWrapper.offset().top;
     const wrapperBottom = wrapperTop + $timelineWrapper.outerHeight();
 
-    const focusPoint = scrollPos + winHeight * 0.5;
+    const triggerOffset = 150;
+
+    const focusPoint = scrollPos + triggerOffset;
     // 0.5 = center of the viewport
 
     const inTimeline = focusPoint > wrapperTop && focusPoint < wrapperBottom;
@@ -96,7 +98,7 @@ $(function () {
   }
 
   $(window).on("scroll", onScroll);
-  onScroll(); 
+  onScroll();
 });
 
 const host = window.location.hostname;
