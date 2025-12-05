@@ -179,7 +179,6 @@
 .wrapper {
   min-height: 100vh;
   font-weight: 300;
-  color: #fff;
   position: relative;
   background: var(--secondary);
   background: linear-gradient(
